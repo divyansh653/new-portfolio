@@ -1,12 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation of FAB LAB</title>
-    <h1></h1>
+    <meta name="description" content="Portfolio of Divyansh Mate from Bhandara">
+    <meta name="author" content="Divyansh Mate">
+    <title>Welcome To My Portfolio</title>
+
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #1a1a1a;
+            color: #fff;
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        .container {
+            padding: 10% 5%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #222;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            width: 120px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1); /* Slightly increase the size */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add a soft shadow effect */
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        li {
+            margin: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        a:hover {
+            background-color: #3498db;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .name {
+            margin-top: 100px;
+            text-align: center;
+            position: relative;
+            background-image: url('images/your-image.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 50px 20px;
+            border-radius: 15px;
+        }
+
+        .name p {
+            font-size: 25px;
+            color: #ddd;
+            margin: 10px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .name h1 {
+            font-size: 60px;
+            color: white;
+            margin: 20px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .name span {
+            font-weight: bold;
+            color: #ff6347;
+        }
+
+        /* About Section */
+        #about {
+            padding: 50px 0;
+            color: #bbb;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .about-col-1 img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .about-col-1 img:hover {
+            transform: scale(1.05);
+        }
+
+        .about-col-2 {
+            flex: 1;
+        }
+
+        .sub-title {
+            font-size: 40px;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .sub-title:hover {
+            color: #3498db;
+        }
+
+        /* Modulus Section */
+        #modulus {
+            padding: 50px 0;
+            background: #222;
+            border-radius: 15px;
+        }
+
+        .documentation {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .doc {
+            flex-basis: 30%;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .doc:hover {
+            transform: scale(1.05);
+            background-color: #3498db;
+        }
+
+        .doc h2 {
+            font-size: 25px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .doc p {
+            color: #bbb;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        #contact h1 {
+            font-size: 50px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        #contact p {
+            color: #bbb;
+            font-size: 18px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            background-color: #444;
+        }
+
+        .contact-form button {
+            padding: 15px 30px;
+            background-color: #3498db;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #2980b9;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Resources Section */
+        #resources {
+            padding: 50px 0;
+            background: #333;
+            color: #fff;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        #resources h1 {
+            font-size: 40px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        #resources ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #resources li {
+            margin: 10px 0;
+        }
+
+        #resources a {
+            color: #3498db;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #resources a:hover {
+            background-color: #3498db;
+            color: #fff;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
+
 <body>
-    
+    <!-- Header Section -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <img src="9a61ce36-d58b-45db-b7c3-33cbfe7014fe.jpg" alt="Logo of Divyansh Mate" class="logo">
+                <ul>
+                    <li><a href="#header">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#modulus">MODULUS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="name">
+                <p>FAB LAB Student</p>
+                <h1>Hi, I'm<span> Divyansh</span><br> Mate From Bhandara.</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="./d531808a-9a13-43b5-8272-89de31e39ec8.jpg" alt="Divyansh's photo">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        Hello! My name is <b>Divyansh Vijay Mate</b>, and I come from the beautiful town of <b>Bhandara</b>.  
+                        I completed my schooling at <b>Z. P. Nutan Vidyalaya, Mundhari (BK)</b>, and pursued my 12th grade at 
+                        <b>Z. P. High and Junior College, Kardi</b>. I am proud to have achieved <b>90.40%</b> in my 10th class and 
+                        <b>80.50%</b> in my 12th class.</p>
+                        <p>
+                        Driven by a passion for learning, I appeared for the <b>Maharashtra Common Entrance Test (MHCET)</b> 
+                        and the <b>Joint Entrance Exam (JEE)</b>. I was thrilled to score <b>92.77%</b> in MHCET and 
+                        <b>90.39%</b> in JEE. Currently, I am pursuing my <b>Bachelor of Engineering</b> in 
+                        <b>Computer Science and Engineering</b> at <b>Shri Sant Gajanan Maharaj College of Engineering, Shegaon.</b>
+                      </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modulus Section -->
+    <section id="modulus">
+        <div class="container">
+            <h1 class="sub-title">My Areas of Expertise</h1>
+            <div class="documentation">
+                <div class="doc">
+                    <h2>Web Development</h2>
+                    <p>Creating dynamic and interactive websites using HTML, CSS, JavaScript, and modern frameworks. I focus on responsive and user-friendly designs.</p>
+                </div>
+                <div class="doc">
+                    <h2>Computer-Aided Design (CAD)</h2>
+                    <p>Using CAD software to design 2D and 3D models, suitable for manufacturing, prototyping, and product visualization.</p>
+                </div>
+                <div class="doc">
+                    <h2>Computer-Aided Cutting</h2>
+                    <p>Utilizing CAM software to create machine tool paths for cutting materials like wood, plastic, and metal with precision.</p>
+                </div>
+                <div class="doc">
+                    <h2>PCB Design</h2>
+                    <p>Designing Printed Circuit Boards (PCBs) for electronic projects, ensuring efficient and reliable electrical connections for devices.</p>
+                </div>
+                <div class="doc">
+                    <h2>Networking</h2>
+                    <p>Understanding and implementing network infrastructures, including routers, switches, and protocols to ensure seamless communication.</p>
+                </div>
+                <div class="doc">
+                    <h2>AI/ML</h2>
+                    <p>Building artificial intelligence models and machine learning algorithms to solve complex problems and enhance automation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources">
+        <div class="container">
+            <h1 class="sub-title">Useful Resources</h1>
+            <p>If you would like to explore more about my work, check out the following links:</p>
+            <ul>
+                <li><a href="https://example.com/portfolio" target="_blank">Visit My Portfolio</a></li>
+                <li><a href="https://example.com/blog" target="_blank">My Blog</a></li>
+                <li><a href="https://github.com/DivyanshMate" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h1 class="sub-title">Contact Me</h1>
+            <p>If you would like to get in touch, please fill out the form below:</p>
+            <div class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Divyansh Mate. All rights reserved.</p>
+    </footer>
 </body>
+
 </html>
